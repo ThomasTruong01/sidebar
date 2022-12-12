@@ -30,6 +30,7 @@ const setDarkModeLocalStorage = (state) => {
 
 useEffect(() => {
   const useDark = window.matchMedia("(prefers-color-scheme: dark)");
+  setDarkMode(useDark.matches)
 }, [])
 
 useEffect(() => {
@@ -43,7 +44,7 @@ useEffect(() => {
       <Head>
         <title>SideBar</title>
         <meta name="description" content="Sidebar Component" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/TTLogo.ico" />
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
       </Head>
 
