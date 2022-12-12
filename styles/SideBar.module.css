@@ -14,12 +14,18 @@
     border-right: 2px solid rgba(255, 255, 255, .09);
     transition: width var(--transition-speed) ease-in-out;
 }
-@media (prefers-color-scheme: dark) {
-    .sidebar {
-        background-color: rgba(10, 10, 10, .65);
-    }
-  }
+
 .sidebar[aria-expanded='true'] {
     width: 360px;
 }
 
+/* Dark Mode */
+/* @media (prefers-color-scheme: dark) {
+    .sidebar {
+        background-color: rgba(10, 10, 10, .65);
+    }
+} */
+
+body[dark-mode='true'] .sidebar {
+    background-color: rgba(10, 10, 10, .65);
+}

@@ -1,12 +1,13 @@
 .container {
   height: 100vh;
+  display: flex;
 }
 
 .main {
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -74,6 +75,10 @@
 }
 
 .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -85,12 +90,12 @@
   max-width: 300px;
 }
 
-.card:hover,
+/* .card:hover,
 .card:focus,
 .card:active {
   color: #0070f3;
   border-color: #0070f3;
-}
+} */
 
 .card h2 {
   margin: 0 0 1rem 0;
@@ -108,6 +113,7 @@
   margin-left: 0.5rem;
 }
 
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -115,10 +121,12 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .card,
   .footer {
-    border-color: #222;
+    background-color: #222;
+    color: #fff;
+    border-color: #fff;
   }
   .code {
     background: #111;
@@ -126,7 +134,12 @@
   .logo img {
     filter: invert(1);
   }
-}
+} */
 
+body[dark-mode='true'] .card {
+  background-color: #222;
+  color: #fff;
+  border-color: #fff;
+}
 
 
