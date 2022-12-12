@@ -19,10 +19,13 @@
 
 .line1, .circle1{
     stroke: var(--primary-light-color);
+    transition: var(--transition-speed);
 }
 body[dark-mode='true'] .line1,
 body[dark-mode='true'] .circle1{
     stroke: var(--primary-dark-color);
+    animation: write 1500ms ease-in-out forwards;
+    animation-iteration-count: 1;
 }
 
 .logo svg:hover .line1, .logo svg:hover .circle1  {
