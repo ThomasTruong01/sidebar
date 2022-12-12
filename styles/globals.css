@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI,  Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
 }
 
 a {
@@ -12,15 +12,22 @@ a {
 }
 
 * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  background-image: url(../public/bg-light.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
   body {
-    color: white;
-    background: black;
+    background-image: url(../public/bg.jpg);
   }
 }
