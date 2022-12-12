@@ -17,7 +17,7 @@
     line-height: 50%;
     text-align: center;
     padding: 2px 0 2px 2px;
-    background: linear-gradient(90deg, transparent 50%, rgba(10, 10, 10, .65) 50%);
+    background: linear-gradient(90deg, transparent 50%, rgba(10, 10, 10, .05) 50%);
     transition: background-color var(--transition-speed) ease;
 }
 
@@ -38,3 +38,6 @@
     stroke-dasharray: 0 195 113 1000;
 }
 
+body[dark-mode='true'] .nav__button {
+    background: linear-gradient(90deg, transparent 50%, rgba(10, 10, 10, .65) 50%);
+}

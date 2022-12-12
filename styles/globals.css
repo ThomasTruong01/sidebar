@@ -25,9 +25,22 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-@media (prefers-color-scheme: dark) {
+.bx {
+  font-size: 40px;
+}
+.bx.bx-moon:before {
+  color: #ffffff;
+  margin-left: 0.25em;
+}
+.bx.bxs-sun:before {
+  color: #ffff00;
+}
+/* @media (prefers-color-scheme: dark) {
   body {
     background-image: url(../public/bg.jpg);
   }
+} */
+
+body[dark-mode='true'] {
+  background-image: url(../public/bg.jpg);
 }
