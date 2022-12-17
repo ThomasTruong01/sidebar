@@ -1,69 +1,76 @@
+import { useEffect } from 'react'
 import styles from '../../styles/Nav.module.css'
-import { useEffect } from 'react';
+import NavList from './NavList'
 
-const Nav = ({Expand}) => {
-    const addEventListener = () => {
-        const navItems = document.querySelectorAll(`.${styles.nav_items}`);
+const Nav = ({ Expand }) => {
+  const addEventListener = () => {
+    const navItems = document.querySelectorAll(`.${styles.nav_items}`)
 
+    navItems.forEach(navItem => {
+      navItem.addEventListener('click', () => {
         navItems.forEach(navItem => {
-            navItem.addEventListener('click', () => {
-                navItems.forEach(navItem => {
-                    navItem.classList.remove(`${styles.active}`);
-                })
-                navItem.classList.add(`${styles.active}`);
-            })
-        });
-
+          navItem.classList.remove(`${styles.active}`)
+        })
+        navItem.classList.add(`${styles.active}`)
+      })
+    })
+  }
+  const navParams = [
+    {
+      title: 'Management',
+      items: [
+        {
+          text: 'Dashboard',
+          className: 'bxs-dashboard'
+        },
+        {
+          text: 'Analytics',
+          className: 'bxs-bar-chart-alt-2'
+        },
+        {
+          text: 'Wallet',
+          className: 'bxs-wallet'
+        },
+        {
+          text: 'Notifications',
+          className: 'bxs-bell'
+        },
+        {
+          text: 'Setting',
+          className: 'bxs-dashboard'
+        }
+      ]
+    },
+    {
+      title: 'Support',
+      items: [
+        {
+          text: 'Get Help',
+          className: 'bxs-help-circle'
+        },
+        {
+          text: 'Send Feedback',
+          className: 'bxs-message-dots'
+        }
+      ]
     }
-    useEffect(() => {
-        addEventListener()
-    }, [])
-    
-    return (
-        <nav className={styles.nav} aria-expanded={Expand}>
-            <div className={styles.nav_title}>
-                Management
-            </div>
-            <ul>
-                <li className={`${styles.nav_items} ${styles.active}`}>
-                    <i className='bx bxs-dashboard'></i>
-                    <span>Dashbboard</span>
-                </li>
-                <li className={styles.nav_items}>
-                    <i className='bx bxs-bar-chart-alt-2'></i>
-                    <span>Analytics</span>
-                </li>
-                <li className={styles.nav_items}>
-                    <i className='bx bxs-wallet'></i>
-                    <span>Wallet</span>
-                </li>
-                <li className={styles.nav_items}>
-                    <i className='bx bxs-bell'></i>
-                    <span>Notifications</span>
-                </li>
-                <li className={styles.nav_items}>
-                    <i className='bx bxs-cog'></i>
-                    <span>Settings</span>
-                </li>
-            </ul>
-            <hr />
-            <div className={styles.nav_title}>
-                Support
-            </div>
-            <ul>
-                <li className={`${styles.nav_items}`}>
-                    <i className='bx bxs-help-circle' ></i>
-                    <span>Get Help</span>
-                </li>
-                <li className={styles.nav_items}>
-                    <i className='bx bxs-message-dots'></i>
-                    <span>Send Feedback</span>
-                </li>
+  ]
+  useEffect(() => {
+    addEventListener()
+  }, [])
 
-            </ul>
-        </nav>
-
-    )
+  return (
+    <nav className={styles.nav} aria-expanded={Expand}>
+      {navParams.map((item, idx) => {
+        return (
+          <>
+            <NavList key={idx+10} navParam={item} />
+            {idx + 1 !== navParams.length ? <hr /> : null}
+          </>
+        )
+      })}
+    </nav>
+  )
 }
 
 export default Nav
