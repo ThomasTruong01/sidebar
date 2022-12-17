@@ -3,18 +3,6 @@ import styles from '../../styles/Nav.module.css'
 import NavList from './NavList'
 
 const Nav = ({ Expand }) => {
-  const addEventListener = () => {
-    const navItems = document.querySelectorAll(`.${styles.nav_items}`)
-
-    navItems.forEach(navItem => {
-      navItem.addEventListener('click', () => {
-        navItems.forEach(navItem => {
-          navItem.classList.remove(`${styles.active}`)
-        })
-        navItem.classList.add(`${styles.active}`)
-      })
-    })
-  }
   const navParams = [
     {
       title: 'Management',
@@ -55,6 +43,19 @@ const Nav = ({ Expand }) => {
       ]
     }
   ]
+  const addEventListener = () => {
+    const navItems = document.querySelectorAll(`.${styles.nav_items}`)
+
+    navItems.forEach(navItem => {
+      navItem.addEventListener('click', () => {
+        navItems.forEach(navItem => {
+          navItem.classList.remove(`${styles.active}`)
+        })
+        navItem.classList.add(`${styles.active}`)
+      })
+    })
+  }
+ 
   useEffect(() => {
     addEventListener()
   }, [])
