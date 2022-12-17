@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { Fragment, useEffect } from 'react'
 import styles from '../../styles/Nav.module.css'
 import NavList from './NavList'
 
@@ -64,10 +64,10 @@ const Nav = ({ Expand }) => {
     <nav className={styles.nav} aria-expanded={Expand}>
       {navParams.map((item, idx) => {
         return (
-          <>
-            <NavList key={idx+10} navParam={item} />
+          <Fragment key={idx} >
+            <NavList navParam={item} />
             {idx + 1 !== navParams.length ? <hr /> : null}
-          </>
+          </Fragment>
         )
       })}
     </nav>
